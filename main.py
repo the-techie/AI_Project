@@ -17,7 +17,7 @@ reward = 15
 out = -1000
 learning_rate = 0.1
 discount = 0.99
-episodes = 20
+episodes = 200
 driver = None
 
 def initialize():
@@ -208,4 +208,9 @@ if __name__ == '__main__':
 
 	f = open("q_table.json", "w")
 	json.dump(q_table, f)
+	f.close()
+
+	f = open("scores.txt", "a")
+	f.write(str(scores))
+	f.write("\n")
 	f.close()
